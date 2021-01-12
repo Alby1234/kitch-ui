@@ -12,30 +12,10 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>React App</title>
-    <script>
-      var callApi = () => {
-        var http = new XMLHttpRequest();
-        var url =
-          "https://ug2wj5diq2.execute-api.eu-west-2.amazonaws.com/dev/items/1";
-        http.open("GET", url, true);
-        http.setRequestHeader("Content-Type", "application/json");
-        http.onload = () => {
-          console.log(http.responseText);
-        };
-
-        http.send();
-      };
-    </script>
+    <title>Kitch</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div>
-      <h1>Testing new deploy script</h1>
-      <button type="button" onclick="callApi()">
-        Click me
-      </button>
-    </div>
     <div id="root"></div>
   </body>
 </html>
