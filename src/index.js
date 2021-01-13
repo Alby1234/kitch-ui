@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Kitchen from "./components/Kitchen";
+import MainKitchenPage from "./pages/MainKitchenPage";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Kitchen />
+    <MainKitchenPage />
   </React.StrictMode>,
   document.getElementById("root")
 );
