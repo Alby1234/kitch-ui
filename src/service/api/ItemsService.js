@@ -28,10 +28,13 @@ export class ItemsService {
 
   async getItemsForUser(id) {
     var response = await this.makeRequest(
-      "https://ug2wj5diq2.execute-api.eu-west-2.amazonaws.com/dev/items/1",
+      "http://ec2-35-176-30-221.eu-west-2.compute.amazonaws.com//api/v1/user/" +
+        id +
+        "/items",
       "GET"
     );
-    return JSON.parse(response);
+    var items = JSON.parse(response);
+    return items;
   }
 }
 

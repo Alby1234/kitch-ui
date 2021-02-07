@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import ItemsService from "../../service/api/ItemsService";
 import Table from "@material-ui/core/Table";
 import TableCell from "@material-ui/core/TableCell";
@@ -9,54 +9,43 @@ import TableBody from "@material-ui/core/TableBody";
 import Paper from "@material-ui/core/Paper";
 import styles from "./ItemTable.css";
 
-class ItemTable extends Component {
-  constructor() {
-    super();
-    this.state = {
-      items: []
-    };
-  }
+const ItemTable = () => {
+  const [items, setItems] = useState([]);
 
-  componentDidMount() {
-    // get the users items from the api
-    ItemsService.getItemsForUser(1)
+  useEffect(() => {
+    ItemsService.getItemsForUser(22)
       .then(response => {
-        var items = response.items;
-        this.setState({
-          items: items
-        });
+        setItems(response);
       })
       .catch(e => {
-        console.log(e);
-        return;
+        console.error(e);
       });
-  }
+  }, items.length);
 
-  render() {
-    return (
-      <TableContainer component={Paper}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Item</TableCell>
-              <TableCell align="center">Quantity</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {Object.entries(this.state.items).map(([key, value]) => (
+  return (
+    <TableContainer component={Paper}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Item</TableCell>
+            <TableCell align="center">Quantity</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {items.length > 0 &&
+            Object.entries(items).map(([key, value]) => (
               <TableRow key={key}>
                 <TableCell>{value.name}</TableCell>
                 <TableCell align="center">
-                  {value.quantity}
+                  {value.quantity + " "}
                   {value.measurement}
                 </TableCell>
               </TableRow>
             ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    );
-  }
-}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
+};
 
 export default ItemTable;

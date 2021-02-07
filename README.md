@@ -6,7 +6,7 @@ This project was initialised using `Create React App`.
 
 ## Access
 
-Prod version of the app is acessible from [here](https://dizcegy3bc69s.cloudfront.net/).
+Prod version of the app is acessible from [here](http://kitch-ui.s3-website.eu-west-2.amazonaws.com/).
 
 ## Build and Deploy
 
