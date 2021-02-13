@@ -1,3 +1,5 @@
+var baseApiUrl = "http://ec2-52-56-184-186.eu-west-2.compute.amazonaws.com/";
+
 export class ItemsService {
   makeRequest(url, method) {
     return new Promise(function(resolve, reject) {
@@ -28,9 +30,7 @@ export class ItemsService {
 
   async getItemsForUser(id) {
     var response = await this.makeRequest(
-      "http://ec2-35-176-30-221.eu-west-2.compute.amazonaws.com//api/v1/user/" +
-        id +
-        "/items",
+      baseApiUrl + "/api/v1/user/" + id + "/items",
       "GET"
     );
     var items = JSON.parse(response);
