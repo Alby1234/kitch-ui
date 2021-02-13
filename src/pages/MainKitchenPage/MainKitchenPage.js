@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ItemTable from "../../components/ItemTable/ItemTable";
-import styles from "./MainKitchenPage.css";
+import styles from "./MainKitchenPage.module.css";
 
 class MainKitchenPage extends Component {
   constructor() {
@@ -10,8 +10,10 @@ class MainKitchenPage extends Component {
   render() {
     return (
       <div>
-        <h1>Kitch</h1>
-        <div className={"itemTableContainer"}>
+        <div className={styles.title}>
+          <h1>Kitch</h1>
+        </div>
+        <div className={styles.itemTableContainer}>
           <ItemTable />
         </div>
       </div>
