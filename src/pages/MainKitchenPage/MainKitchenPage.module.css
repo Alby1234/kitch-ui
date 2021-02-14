@@ -6,3 +6,12 @@
   text-align: center;
   margin-top: 100px;
 }
+
+.addItems {
+  background: var(--action);
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  cursor: pointer;
+}

@@ -19,7 +19,7 @@ const ItemTable = () => {
       .catch(e => {
         console.error(e);
       });
-  }, items.length);
+  }, [items.length]);
 
   return (
     <TableContainer component={Paper}>

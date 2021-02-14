@@ -1,4 +1,4 @@
-var baseApiUrl = "http://ec2-52-56-184-186.eu-west-2.compute.amazonaws.com/";
+const baseApiUrl = "http://ec2-52-56-184-186.eu-west-2.compute.amazonaws.com/";
 
 export class ItemsService {
   makeRequest(url, method) {
