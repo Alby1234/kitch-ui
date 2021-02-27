@@ -1,17 +1,22 @@
-import styles from "./AddItemForm";
+import styles from "./AddItemForm.module.css";
 
 const AddItemForm = () => {
   return (
-    <div className={styles.formContainer}>
-      <button>X</button>
-      <form>
-        <label>Item: </label>
-        <input type={"text"} id={"itemInput"} /> <br />
-        <label>Measurement: </label>
-        <input type={"text"} id={"measurementInput"} /> <br />
-        <label>Quantity: </label>
-        <input type={"text"} id={"quantityInput"} /> <br />
-      </form>
+    <div className={styles.container}>
+      <button className={styles.quitButton}>X</button>
+      <div className={styles.formContainer}>
+        <div>
+          <label for="item">Item: </label>
+          <input id="item" type="text" />
+          <br />
+          <label for="measurement">Measurement: </label>
+          <input id="measurement" type="text" />
+          <br />
+          <label for="quantity">Quantity: </label>
+          <input id="quantity" type="text" />
+        </div>
+        <button className={styles.addButton}>Add</button>
+      </div>
     </div>
   );
 };
