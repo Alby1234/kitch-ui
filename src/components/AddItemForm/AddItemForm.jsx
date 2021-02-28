@@ -1,18 +1,20 @@
 import styles from "./AddItemForm.module.css";
 
-const AddItemForm = () => {
+const AddItemForm = ({ onClose }) => {
   return (
     <div className={styles.container}>
-      <button className={styles.quitButton}>X</button>
+      <button className={styles.quitButton} onClick={() => onClose()}>
+        X
+      </button>
       <div className={styles.formContainer}>
         <div>
-          <label for="item">Item: </label>
+          <label htmlFor="item">Item: </label>
           <input id="item" type="text" />
           <br />
-          <label for="measurement">Measurement: </label>
+          <label htmlFor="measurement">Measurement: </label>
           <input id="measurement" type="text" />
           <br />
-          <label for="quantity">Quantity: </label>
+          <label htmlFor="quantity">Quantity: </label>
           <input id="quantity" type="text" />
         </div>
         <button className={styles.addButton}>Add</button>
